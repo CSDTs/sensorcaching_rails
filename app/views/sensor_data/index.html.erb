@@ -1,0 +1,31 @@
+<h1>Listing sensor_data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Data</th>
+      <th>Sensor</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensor_data.each do |sensor_datum| %>
+      <tr>
+        <td><%= sensor_datum.date %></td>
+        <td><%= sensor_datum.data %></td>
+        <td><%= sensor_datum.sensor_id %></td>
+        <td><%= link_to 'Show', sensor_datum %></td>
+        <td><%= link_to 'Edit', edit_sensor_datum_path(sensor_datum) %></td>
+        <td><%= link_to 'Destroy', sensor_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sensor datum', new_sensor_datum_path %>

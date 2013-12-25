@@ -4,7 +4,7 @@
   <td><%= sensor.sensor_type.name %></td>
   <td><%= sensor.latitude %></td>
   <td><%= sensor.longitude %></td>
-  <%if @distance == true %>
+  <%if sensor.distance %>
     <td><%= number_with_precision(sensor.distance, precision: 2)%> miles</td>
   <% end %>
   <td><%= link_to 'Show', sensor %></td>

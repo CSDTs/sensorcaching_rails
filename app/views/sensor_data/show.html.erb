@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sensor_datum.date %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @sensor_datum.data %>
+</p>
+
+<p>
+  <strong>Sensor:</strong>
+  <%= @sensor_datum.sensor_id %>
+</p>
+
+<%= link_to 'Edit', edit_sensor_datum_path(@sensor_datum) %> |
+<%= link_to 'Back', sensor_data_path %>

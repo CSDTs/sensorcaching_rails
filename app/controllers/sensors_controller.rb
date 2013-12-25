@@ -65,7 +65,20 @@ class SensorsController < ApplicationController
   # GET /sensors_by_user/1
   def sensors_by_user
     @sensors = Sensor.where("user_id = ?", params[:id])
-    
+    render 'index'
+  end
+  
+  # GET /sensors_near_me/(optional number of miles)
+  def sensors_near_me
+    params[:dist] = 15 if params[:dist] == nil
+    @sensors = Sensor.near(current_user, params[:dist])
+    @distance = true
+    render 'index'
+  end
+  
+  def sensors_by_type
+    @sensors = Sensor.where("sensor_type_id = ?", params[:type])
+    render 'index'
   end
 
   private

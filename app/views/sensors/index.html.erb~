@@ -8,6 +8,9 @@
       <th>Type</th>
       <th>Latitude</th>
       <th>Longitude</th>
+      <% if @distance == true %>
+        <th>Distance</th>
+      <% end %>
       <th></th>
       <th></th>
       <th></th>
@@ -15,18 +18,7 @@
   </thead>
 
   <tbody>
-    <% @sensors.each do |sensor| %>
-      <tr>
-        <td><%= sensor.name %></td>
-        <td><%= sensor.description %></td>
-        <td><%= sensor.sensor_type.name %></td>
-        <td><%= sensor.latitude %></td>
-        <td><%= sensor.longitude %></td>
-        <td><%= link_to 'Show', sensor %></td>
-        <td><%= link_to 'Edit', edit_sensor_path(sensor) %></td>
-        <td><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @sensors %>
   </tbody>
 </table>
 
