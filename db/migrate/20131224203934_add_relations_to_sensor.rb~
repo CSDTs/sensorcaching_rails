@@ -1,0 +1,7 @@
+class AddRelationsToSensor < ActiveRecord::Migration
+  def change
+    add_belongs_to :sensor, :user, index: true
+    add_belongs_to :sensor, :sensor_type, index: true
+    
+  end
+end
