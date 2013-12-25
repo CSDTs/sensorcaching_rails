@@ -61,6 +61,7 @@ GEM
       rails (>= 3, < 5)
     formatador (0.2.4)
     geocoder (1.1.9)
+    gmaps4rails (2.1.1)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -174,6 +175,7 @@ DEPENDENCIES
   devise
   figaro
   geocoder
+  gmaps4rails
   guard-bundler
   guard-rails
   high_voltage
