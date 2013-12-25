@@ -1,6 +1,4 @@
 SensorcachingRails::Application.routes.draw do
-  resources :sensor_data
-
   resources :sensors
 
   resources :sensor_types
