@@ -7,4 +7,6 @@ SensorcachingRails::Application.routes.draw do
   devise_for :views
   
   root :to => 'visitors#new'
+  
+  get '/sensors_by_user/:id', to: 'sensors#sensors_by_user'
 end

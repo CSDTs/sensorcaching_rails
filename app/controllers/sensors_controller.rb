@@ -25,6 +25,7 @@ class SensorsController < ApplicationController
   # POST /sensors.json
   def create
     @sensor = Sensor.new(sensor_params)
+    @sensor.user_id = current_user.id
 
     respond_to do |format|
       if @sensor.save
@@ -59,6 +60,12 @@ class SensorsController < ApplicationController
       format.html { redirect_to sensors_url }
       format.json { head :no_content }
     end
+  end
+  
+  # GET /sensors_by_user/1
+  def sensors_by_user
+    @sensors = Sensor.where("user_id = ?", params[:id])
+    
   end
 
   private

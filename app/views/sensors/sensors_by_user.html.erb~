@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listing sensors</h1>
 
 <table>
@@ -16,9 +18,5 @@
 
   <tbody>
     <%= render @sensors %>
-  </tbody>
+    </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Sensor', new_sensor_path %>

@@ -11,7 +11,7 @@ class SensorsController < ApplicationController
   # GET /sensors/1.json
   def show
   end
-
+  
   # GET /sensors/new
   def new
     @sensor = Sensor.new
@@ -60,6 +60,12 @@ class SensorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /sensors_by_user/1
+  def sensors_by_user
+    @sensors = Sensor.where("user_id = ?", params[:id])
+    
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +75,6 @@ class SensorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sensor_params
-      params.require(:sensor).permit(:name, :description)
+      params.require(:sensor).permit(:name, :description, :sensor_type_id, :latitude, :longitude)
     end
 end
