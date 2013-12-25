@@ -3,7 +3,7 @@ SensorcachingRails::Application.routes.draw do
 
   resources :sensor_types
 
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => 'users/sessions' } 
   devise_for :views
   
   root :to => 'visitors#new'

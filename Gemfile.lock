@@ -60,6 +60,7 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
+    geocoder (1.1.9)
     guard (2.2.5)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -171,6 +172,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   figaro
+  geocoder
   guard-bundler
   guard-rails
   high_voltage

@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :sensors
+  
+  geocoded_by :zip
+  after_validation :geocode
 end

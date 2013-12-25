@@ -11,7 +11,7 @@ class SensorsController < ApplicationController
   # GET /sensors/1.json
   def show
   end
-
+  
   # GET /sensors/new
   def new
     @sensor = Sensor.new
