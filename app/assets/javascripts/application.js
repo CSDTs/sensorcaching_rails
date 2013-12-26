@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+//requires for Gmaps4Rails
+//= require underscore
+//= require gmaps/google
