@@ -1,5 +1,17 @@
 <h3>Home</h3>
 
+<script type="text/javascript">
+  $(document).ready(function () {
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_canvas'}}, function(){
+      markers = handler.addMarkers(<%=raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+  });
+  
+</script>
+
 <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+  <div id="map_canvas" class="google-maps" style='width: 800px; height: 400px;'></div>
 </div>
