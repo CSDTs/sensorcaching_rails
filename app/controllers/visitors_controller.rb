@@ -8,7 +8,7 @@ class VisitorsController < ApplicationController
       marker.infowindow "<div>
                           <h2>" + sensor.name + "</h2>
                           <p>" + sensor.description + "</p>
-                          <p><strong>Nearest Address:</strong>" + sensor.latitude.to_s + "</p>
+                          <p><strong>Nearest Address:</strong>" + sensor.address + "</p>
                           <p><a href='/sensors/"+ sensor.id.to_s + "/'>More info</a></p>
                           
                         </div>"
