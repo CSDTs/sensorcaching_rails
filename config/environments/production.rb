@@ -77,4 +77,7 @@ SensorcachingRails::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  
+  #configure cache store to use Redis
+  config.cache_store = :redis_store
 end
