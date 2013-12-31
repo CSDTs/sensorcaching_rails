@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   
   geocoded_by :zip
   after_validation :geocode
+  
+  include RoleModel
+  roles_attribute :roles_mask
+  roles :admin, :manager
 end

@@ -25,6 +25,7 @@ class SensorDataController < ApplicationController
   # POST /sensor_data.json
   def create
     @sensor_datum = SensorDatum.new(sensor_datum_params)
+    @sensor_datum.user_id = current_user.id
 
     respond_to do |format|
       if @sensor_datum.save
