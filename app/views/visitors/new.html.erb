@@ -7,6 +7,11 @@
       markers = handler.addMarkers(<%=raw @hash.to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
+      google.maps.event.addListener(handler.getMap(), 'resize', function() {
+        var center = handler.getMap().getCenter();
+        google.maps.event.trigger(handler.getMap(), "resize");
+        handler.getMap().setCenter(center);
+      })
     });
   });
   
