@@ -18,5 +18,7 @@
 
   <tbody>
     <%= render @sensors %>
+    
+    <%= render partial: "shared/map", locals: {sensors: @hash} %>
     </tbody>
 </table>

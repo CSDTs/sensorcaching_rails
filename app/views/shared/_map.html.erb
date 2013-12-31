@@ -2,7 +2,7 @@
   $(document).ready(function () {
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map_canvas'}}, function(){
-      markers = handler.addMarkers(<%=raw sensors.to_json %>);
+      markers = handler.addMarkers(<%=raw markers_from_sensors(sensors).to_json %>);
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       google.maps.event.addListener(handler.getMap(), 'resize', function() {
