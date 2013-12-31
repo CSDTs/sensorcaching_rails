@@ -24,6 +24,7 @@ This application requires:
 
 * Ruby version 2.0.0
 * Rails version 4.0.2
+* redis version 2.2.2
 
 Learn more about "Installing Rails":http://railsapps.github.io/installing-rails.html.
 
@@ -37,8 +38,8 @@ h2. Development
 * Testing Framework: Test::Unit
 * Front-end Framework: Twitter Bootstrap 3.0 (Sass)
 * Form Builder: SimpleForm
-* Authentication: None
-* Authorization: None
+* Authentication: Devise
+* Authorization: CanCan
 
 
 
@@ -46,7 +47,14 @@ h2. Development
 
 h2. Getting Started
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+# Clone this repository with @git clone https://github.com/GK-12/sensorcaching_rails.git@
+# change to the cloned directory with @cd sensorcaching_rails@
+# Install all necessary gems with @bundle install@
+# Make sure the database is up-to-date by running @rake db:drop db:create db:migrate@
+# (Optional) add some basic sensor types, users and sensors by running @rake db:seed@
+# Set up Redis caching by following the instructions "here":http://redis.io/topics/quickstart, and ensure the redis server is running.
+# Start the webapp by running @rails server@
+
 
 h2. Documentation and Support
 
@@ -54,11 +62,11 @@ This is the only documentation.
 
 h4. Issues
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+If you run into any bugs, the best thing to do is to log an issue at the "GK-12 Sensorcaching Rails Github":https://github.com/GK-12/sensorcaching_rails/issues. That way, all project contributors will know about the issue, and can work on it collaboratively.
 
 h2. Similar Projects
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+This project is a rewrite of the Culturally Situated Sensing site currently located "here":https://github.com/GK-12/sensorcaching_website. Other community-and-education-focused projects can be found at the "GK-12 Github page":https://github.com/GK-12.
 
 h2. Contributing
 
@@ -73,8 +81,29 @@ If you add functionality to this application, create an alternative implementati
 
 h2. Credits
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Author: Michael O'Keefe
+Contributors: Ellen Foster, Andrew Ellis, Louis Gutierrez, Chris Shing
+GK-12 Project Principal Investigator: Ron Eglash, Ph.D.
 
 h2. License
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Copyright 2013 RPI Triple Helix Group
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
