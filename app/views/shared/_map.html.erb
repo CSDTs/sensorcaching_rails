@@ -1,0 +1,20 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map_canvas'}}, function(){
+      markers = handler.addMarkers(<%=raw sensors.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      google.maps.event.addListener(handler.getMap(), 'resize', function() {
+        var center = handler.getMap().getCenter();
+        google.maps.event.trigger(handler.getMap(), "resize");
+        handler.getMap().setCenter(center);
+      })
+    });
+  });
+  
+</script>
+
+<div style='width: 800px;'>
+  <div id="map_canvas" class="google-maps" style='width: 800px; height: 400px;'></div>
+</div>
