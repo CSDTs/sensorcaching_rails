@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131229190140) do
+ActiveRecord::Schema.define(version: 20140311005426) do
 
   create_table "sensor_data", force: true do |t|
     t.integer  "sensor_id"
     t.datetime "timestamp"
     t.float    "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sensor_finds", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "sensor_id"
+    t.datetime "time"
+    t.datetime "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  sensor_id: 
+  time: 2014-03-10 20:54:26
+  comments: 2014-03-10 20:54:26
+
+two:
+  user_id: 
+  sensor_id: 
+  time: 2014-03-10 20:54:26
+  comments: 2014-03-10 20:54:26
