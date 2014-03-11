@@ -1,9 +1,8 @@
 SensorcachingRails::Application.routes.draw do
   resources :sensor_data
-
   resources :sensors
-
   resources :sensor_types
+  resources :sensor_finds
 
   devise_for :users
   devise_for :views
