@@ -201,6 +201,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails-erd
   rails_layout
+  rake
   rb-fchange
   rb-fsevent
   rb-inotify
