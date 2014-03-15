@@ -13,8 +13,7 @@ module Combinedcrud extend ActiveSupport::Concern
         format.html { redirect_to obj, notice: obj_name + ' was successfully created.' }
         format.json { render action: 'show', status: :created, location: obj }
       else
-        format.html { render action: 'new' }
-        format.json { render json: obj.errors, status: :unprocessable_entity }
+        json_error_return(obj, 'new')
       end
     end
   end
@@ -25,10 +24,14 @@ module Combinedcrud extend ActiveSupport::Concern
         format.html { redirect_to obj, notice: obj_name + ' was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
-        format.json { render json: obj.errors, status: :unprocessable_entity }
+        json_error_return(obj, 'edit')
       end
     end
+  end
+  
+  def json_error_return(obj, action)
+    format.html { render action: action }
+    format.json { render json: obj.errors, status: :unprocessable_entity }
   end
   
 end
