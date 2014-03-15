@@ -29,29 +29,13 @@ class SensorsController < ApplicationController
     @sensor = Sensor.new(sensor_params)
     @sensor.user_id = current_user.id
 
-    respond_to do |format|
-      if @sensor.save
-        format.html { redirect_to @sensor, notice: 'Sensor was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @sensor }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @sensor.errors, status: :unprocessable_entity }
-      end
-    end
+    create_save(@sensor, "Sensor")
   end
 
   # PATCH/PUT /sensors/1
   # PATCH/PUT /sensors/1.json
   def update
-    respond_to do |format|
-      if @sensor.update(sensor_params)
-        format.html { redirect_to @sensor, notice: 'Sensor was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @sensor.errors, status: :unprocessable_entity }
-      end
-    end
+    update_save(@sensor, sensor_params, "Sensor")
   end
 
   # DELETE /sensors/1

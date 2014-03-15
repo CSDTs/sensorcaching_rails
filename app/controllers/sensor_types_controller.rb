@@ -27,30 +27,14 @@ class SensorTypesController < ApplicationController
   # POST /sensor_types.json
   def create
     @sensor_type = SensorType.new(sensor_type_params)
-
-    respond_to do |format|
-      if @sensor_type.save
-        format.html { redirect_to @sensor_type, notice: 'Sensor type was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @sensor_type }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @sensor_type.errors, status: :unprocessable_entity }
-      end
-    end
+    
+    create_save(@sensor_type, "Sensor type")
   end
 
   # PATCH/PUT /sensor_types/1
   # PATCH/PUT /sensor_types/1.json
   def update
-    respond_to do |format|
-      if @sensor_type.update(sensor_type_params)
-        format.html { redirect_to @sensor_type, notice: 'Sensor type was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @sensor_type.errors, status: :unprocessable_entity }
-      end
-    end
+    update_save(@sensor_type, sensor_type_params, "Sensor type")
   end
 
   # DELETE /sensor_types/1
