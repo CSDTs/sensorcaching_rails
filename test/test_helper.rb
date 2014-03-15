@@ -5,6 +5,9 @@ require 'rails/test_help'
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
+require 'coveralls'
+Coveralls.wear!
+
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
 

@@ -1,4 +1,5 @@
 class SensorDataController < ApplicationController
+  include Combinedcrud
   before_action :set_sensor_datum, only: [:show, :edit, :update, :destroy]
 
   # GET /sensor_data
@@ -54,11 +55,7 @@ class SensorDataController < ApplicationController
   # DELETE /sensor_data/1
   # DELETE /sensor_data/1.json
   def destroy
-    @sensor_datum.destroy
-    respond_to do |format|
-      format.html { redirect_to sensor_data_url }
-      format.json { head :no_content }
-    end
+    destroy_and_redirect(@sensor_datum, sensor_data_url)
   end
 
   private

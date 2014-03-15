@@ -1,4 +1,5 @@
 class SensorTypesController < ApplicationController
+  include Combinedcrud
   load_and_authorize_resource
   before_action :set_sensor_type, only: [:show, :edit, :update, :destroy]
 
@@ -55,11 +56,7 @@ class SensorTypesController < ApplicationController
   # DELETE /sensor_types/1
   # DELETE /sensor_types/1.json
   def destroy
-    @sensor_type.destroy
-    respond_to do |format|
-      format.html { redirect_to sensor_types_url }
-      format.json { head :no_content }
-    end
+    destroy_and_redirect(@sensor_type, sensor_types_url)
   end
 
   private
