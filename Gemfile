@@ -19,6 +19,8 @@ gem 'gmaps4rails'
 gem 'redis-server'
 gem 'cancan'
 gem 'role_model'
+gem 'coveralls', require: false
+gem "codeclimate-test-reporter", group: :test, require: nil
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

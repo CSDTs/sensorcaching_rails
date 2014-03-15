@@ -3,3 +3,4 @@ rvm:
   - 2.0.0
 services:
   - redis-server
+script: CODECLIMATE_REPO_TOKEN=9317dc9e19b3b614cdac8a67bc3ee7acb6472482b3cab70f914f4934b285198d bundle exec rake
