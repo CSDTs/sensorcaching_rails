@@ -1,9 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+sensor_one:
   name: MyString
   description: MyText
+  sensor_type: light
+  latitude: 90.000
+  longitude: 90.000
+  address: 120 Foo Street
+  user: user_one
 
-two:
+sensor_two:
   name: MyString
   description: MyText
+  sensor_type: temperature
+  latitude: 40.000
+  longitude: 72.000
+  address: 120 Foo Street
+  user: user_two
+

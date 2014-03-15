@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SensorDataControllerTest < ActionController::TestCase
   setup do
-    @sensor_datum = sensor_data(:one)
+    @sensor_datum = sensor_data(:data_one)
   end
 
   test "should get index" do

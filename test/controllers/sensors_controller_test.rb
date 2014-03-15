@@ -2,7 +2,10 @@ require 'test_helper'
 
 class SensorsControllerTest < ActionController::TestCase
   setup do
-    @sensor = sensors(:one)
+    @sensor = sensors(:sensor_one)
+    @u1 = users(:user_one)
+    sign_in @u1
+    
   end
 
   test "should get index" do
