@@ -32,3 +32,6 @@ group :development do
   gem 'rb-inotify', :require=>false
   gem 'rails-erd'
 end
+group :test do
+  gem 'rake'
+end
