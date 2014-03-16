@@ -1,4 +1,5 @@
 SensorcachingRails::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :sensor_data
   resources :sensors
   resources :sensor_types
