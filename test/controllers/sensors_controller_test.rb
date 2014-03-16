@@ -49,4 +49,15 @@ class SensorsControllerTest < ActionController::TestCase
 
     assert_redirected_to sensors_path
   end
+  
+  test "should succeed in returning sensors near me" do
+    get "sensors_near_me"
+    assert_response :success
+  end
+  
+  test "should succeed in returning sensors for a type" do
+    get "sensors_by_type", type: :light
+    assert_response :success
+  end
+  
 end

@@ -59,8 +59,10 @@ class SensorsController < ApplicationController
   end
   
   def sensors_by_type
-    @sensors = Sensor.where("sensor_type_id = ?", params[:type])
-    render 'index'
+    if can? :index, @sensor
+      @sensors = Sensor.where("sensor_type_id = ?", params[:type])
+      render 'index'
+    end
   end
 
   private
