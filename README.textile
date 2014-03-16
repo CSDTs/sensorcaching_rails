@@ -1,3 +1,7 @@
+!https://travis-ci.org/GK-12/sensorcaching_rails.png?branch=master!:https://travis-ci.org/GK-12/sensorcaching_rails
+!https://coveralls.io/repos/GK-12/sensorcaching_rails/badge.png?branch=master(Coverage Status)!:https://coveralls.io/r/GK-12/sensorcaching_rails?branch=master
+"!https://codeclimate.com/github/GK-12/sensorcaching_rails.png!":https://codeclimate.com/github/GK-12/sensorcaching_rails
+
 h1. Sensorcaching Rails
 
 This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.io/.
