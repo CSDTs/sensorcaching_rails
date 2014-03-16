@@ -11,38 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311005426) do
+ActiveRecord::Schema.define(version: 20140316011358) do
 
   create_table "sensor_data", force: true do |t|
-    t.integer  "sensor_id"
-    t.datetime "timestamp"
-    t.float    "data"
+    t.integer  "sensor_find_id"
+    t.datetime "timestamp",      null: false
+    t.float    "data",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sensor_finds", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "sensor_id"
-    t.datetime "time"
+    t.integer  "user_id",    null: false
+    t.integer  "sensor_id",  null: false
+    t.datetime "time",       null: false
     t.datetime "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sensor_types", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sensors", force: true do |t|
-    t.string   "name"
+    t.string   "name",           null: false
     t.text     "description"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "user_id"
-    t.integer  "sensor_type_id"
+    t.float    "latitude",       null: false
+    t.float    "longitude",      null: false
+    t.integer  "user_id",        null: false
+    t.integer  "sensor_type_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "address"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 20140311005426) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",                          null: false
+    t.string   "last_name",                           null: false
     t.string   "zip"
     t.float    "latitude"
     t.float    "longitude"
