@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 data_one:
+  sensor_find: find_one
   timestamp: 2013-12-25 00:58:23
   data: 1.5
 
 data_two:
+  sensor_find: find_two
   timestamp: 2013-12-25 00:58:23
   data: 1.5

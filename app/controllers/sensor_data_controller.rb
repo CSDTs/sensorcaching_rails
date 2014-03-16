@@ -50,6 +50,6 @@ class SensorDataController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sensor_datum_params
-      params.require(:sensor_datum).permit(:sensor_id, :timestamp, :data)
+      params.require(:sensor_datum).permit(:sensor_find_id, :timestamp, :data)
     end
 end

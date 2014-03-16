@@ -15,7 +15,7 @@
   <tbody>
     <% @sensor_data.each do |sensor_datum| %>
       <tr>
-        <td><%= sensor_datum.sensor_id %></td>
+        <td><%= sensor_datum.sensor_find_id %></td>
         <td><%= sensor_datum.timestamp %></td>
         <td><%= sensor_datum.data %></td>
         <td><%= link_to 'Show', sensor_datum %></td>

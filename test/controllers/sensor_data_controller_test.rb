@@ -18,7 +18,7 @@ class SensorDataControllerTest < ActionController::TestCase
 
   test "should create sensor_datum" do
     assert_difference('SensorDatum.count') do
-      post :create, sensor_datum: { data: @sensor_datum.data, sensor_id: @sensor_datum.sensor_id, timestamp: @sensor_datum.timestamp }
+      post :create, sensor_datum: { data: @sensor_datum.data, sensor_find_id: @sensor_datum.sensor_find_id, timestamp: @sensor_datum.timestamp }
     end
 
     assert_redirected_to sensor_datum_path(assigns(:sensor_datum))
@@ -35,7 +35,7 @@ class SensorDataControllerTest < ActionController::TestCase
   end
 
   test "should update sensor_datum" do
-    patch :update, id: @sensor_datum, sensor_datum: { data: @sensor_datum.data, sensor_id: @sensor_datum.sensor_id, timestamp: @sensor_datum.timestamp }
+    patch :update, id: @sensor_datum, sensor_datum: { data: @sensor_datum.data, sensor_find_id: @sensor_datum.sensor_find_id, timestamp: @sensor_datum.timestamp }
     assert_redirected_to sensor_datum_path(assigns(:sensor_datum))
   end
 

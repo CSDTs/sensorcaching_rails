@@ -21,7 +21,7 @@ class SensorsControllerTest < ActionController::TestCase
 
   test "should create sensor" do
     assert_difference('Sensor.count') do
-      post :create, sensor: { description: @sensor.description, name: @sensor.name }
+      post :create, sensor: { description: @sensor.description, name: @sensor.name , latitude: @sensor.latitude, longitude: @sensor.longitude, sensor_type_id: @sensor.sensor_type.id}
     end
 
     assert_redirected_to sensor_path(assigns(:sensor))
