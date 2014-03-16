@@ -15,6 +15,7 @@ class Ability
     can :crud, SensorDatum, :user_id => user.id
     can :sensors_by_type, Sensor
     can :sensors_near_me, Sensor
+    can :sensors_by_user, Sensor
     
     if user.has_role? :admin
       can :access, :rails_admin   # grant access to rails_admin

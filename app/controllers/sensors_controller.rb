@@ -46,14 +46,15 @@ class SensorsController < ApplicationController
   
   # GET /sensors_by_user/1
   def sensors_by_user
-    @sensors = Sensor.where("user_id = ?", params[:id])
+    user_id = Integer(params[:user_id]) rescue false ? params[:user_id].to_i : @current_user.id
+    @sensors = Sensor.where("user_id = ?", user_id)
     render 'index'
   end
   
   # GET /sensors_near_me/(optional number of miles)
   def sensors_near_me
-    params[:dist] = 15 if params[:dist] == nil
-    @sensors = Sensor.near(current_user, params[:dist])
+    dist = Integer(params[:dist]) rescue false ? params[:dist].to_i : 15
+    @sensors = Sensor.near(current_user, dist)
     @distance = true
     render 'index'
   end

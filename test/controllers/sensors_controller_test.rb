@@ -60,4 +60,19 @@ class SensorsControllerTest < ActionController::TestCase
     assert_response :success
   end
   
+  test "should succeed in returning a page for sensors for the current user" do
+    get "sensors_by_user"
+    assert_response :success
+  end
+  
+  test "should succeed in returning a page for sensors for a different user" do
+    get "sensors_by_user", user_id: users(:user_two).id
+    assert_response :success
+  end
+  
+  test "should ignore an ID that is not an int (and still work)" do
+    get "sensors_by_user", user_id: "asdf"
+    assert_response :success
+  end
+  
 end
