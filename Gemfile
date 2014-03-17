@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 gem 'rails', '4.0.2'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
@@ -24,7 +24,7 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem "rails_admin"
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'binding_of_caller'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'hub', :require=>nil
