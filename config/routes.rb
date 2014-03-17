@@ -7,6 +7,8 @@ SensorcachingRails::Application.routes.draw do
 
   devise_for :users
   devise_for :views
+
+  resources :users
   
   root :to => 'visitors#new'
   
