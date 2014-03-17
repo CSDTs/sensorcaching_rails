@@ -13,6 +13,15 @@ class SensorsControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:sensors)
   end
+  
+  test "should get index for JSON" do
+    @request.headers["Accept"] = "application/json"
+    get :index
+    
+    assert_response :success
+    assert_not_nil assigns(:sensors)
+    assert_equal(@response.content_type, "application/json")
+  end
 
   test "should get new" do
     get :new
