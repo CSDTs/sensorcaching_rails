@@ -8,8 +8,10 @@ user_one:
   first_name: Foo
   last_name: Bar
   email: foo@bar.com
-#
+  zip: 12180
+
 user_two: 
   first_name: Bar
   last_name: Foo
   email: bar@foo.com
+  zip: 03051

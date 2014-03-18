@@ -4,17 +4,35 @@ sensor_one:
   name: MyString
   description: MyText
   sensor_type: light
-  latitude: 90.000
-  longitude: 90.000
+  latitude: 42.724106
+  longitude: -73.687920
   address: 120 Foo Street
   user: user_one
-
+  
 sensor_two:
   name: MyString
   description: MyText
+  sensor_type: light
+  latitude: 42.730868
+  longitude: -73.681718
+  address: 120 Foo Street
+  user: user_one
+  
+sensor_three:
+  name: MyString
+  description: MyText
+  sensor_type: light
+  latitude: 42.714867
+  longitude: -73.692855
+  address: 120 Foo Street
+  user: user_one
+
+sensor_four:
+  name: MyString
+  description: MyText
   sensor_type: temperature
-  latitude: 40.000
-  longitude: 72.000
+  latitude: 42.762546
+  longitude: -71.434886
   address: 120 Foo Street
   user: user_two
 

@@ -40,11 +40,13 @@ class SensorTypesControllerTest < ActionController::TestCase
   test "should show sensor_type" do
     get :show, id: @sensor_type
     assert_response :success
+    assert_not_nil assigns(:sensor_type)
   end
 
   test "should get edit" do
     get :edit, id: @sensor_type
     assert_response :success
+    assert_not_nil assigns(:sensor_type)
   end
 
   test "should update sensor_type" do

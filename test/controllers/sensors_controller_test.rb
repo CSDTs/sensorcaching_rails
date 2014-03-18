@@ -67,13 +67,16 @@ class SensorsControllerTest < ActionController::TestCase
   test "should succeed in returning sensors near me" do
     get "sensors_near_me"
     assert_response :success
-    assert_not_nil assigns(:sensors) 
+    assert_not_nil assigns(:sensors)
   end
   
   test "should succeed in returning sensors for a type" do
-    get "sensors_by_type", type: :light
+    get "sensors_by_type", type: sensor_types(:light)
     assert_response :success
     assert_not_nil assigns(:sensors)
+    assigns(:sensors).each do |sensor|
+      assert_equal(sensor_types(:light).id, sensor.sensor_type_id)
+    end
   end
   
   test "should succeed in returning sensors for the current user" do
