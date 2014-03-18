@@ -34,16 +34,21 @@ class SensorsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to sensor_path(assigns(:sensor))
+    assert_not_nil assigns(:sensor)
   end
 
   test "should show sensor" do
     get :show, id: @sensor
     assert_response :success
+    assert_not_nil assigns(:sensor)
+    assert_equal(@sensor.id, assigns(:sensor).id)
   end
 
   test "should get edit" do
     get :edit, id: @sensor
     assert_response :success
+    assert_not_nil assigns(:sensor)
+    assert_equal(@sensor.id, assigns(:sensor).id)
   end
 
   test "should update sensor" do
@@ -62,26 +67,37 @@ class SensorsControllerTest < ActionController::TestCase
   test "should succeed in returning sensors near me" do
     get "sensors_near_me"
     assert_response :success
+    assert_not_nil assigns(:sensors) 
   end
   
   test "should succeed in returning sensors for a type" do
     get "sensors_by_type", type: :light
     assert_response :success
+    assert_not_nil assigns(:sensors)
   end
   
-  test "should succeed in returning a page for sensors for the current user" do
+  test "should succeed in returning sensors for the current user" do
     get "sensors_by_user"
     assert_response :success
+    assert_not_nil assigns(:sensors)
+    assigns(:sensors).each do |sensor|
+      assert_equal(@u1.id, sensor.user_id)
+    end
   end
   
-  test "should succeed in returning a page for sensors for a different user" do
+  test "should succeed in returning sensors for a different user" do
     get "sensors_by_user", user_id: users(:user_two).id
     assert_response :success
+    assert_not_nil assigns(:sensors)
+    assigns(:sensors).each do |sensor|
+      assert_equal(users(:user_two).id, sensor.user_id)
+    end
   end
   
   test "should ignore an ID that is not an int (and still work)" do
     get "sensors_by_user", user_id: "asdf"
     assert_response :success
+    assert_not_nil assigns(:sensors)
   end
   
 end
