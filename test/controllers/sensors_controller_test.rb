@@ -98,6 +98,9 @@ class SensorsControllerTest < ActionController::TestCase
     get "sensors_by_user", user_id: "asdf"
     assert_response :success
     assert_not_nil assigns(:sensors)
+    assigns(:sensors).each do |sensor|
+      assert_equal(@u1.id, sensor.user_id)
+    end
   end
   
 end
