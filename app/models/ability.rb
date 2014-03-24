@@ -13,6 +13,7 @@ class Ability
     can :create, User
     can :crud, Sensor, :user_id => user.id
     can :crud, SensorDatum, :user_id => user.id
+    can :crud, SensorFind, :user_id => user.id
     can :sensors_by_type, Sensor
     can :sensors_near_me, Sensor
     can :sensors_by_user, Sensor
