@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140316011358) do
     t.integer  "user_id",    null: false
     t.integer  "sensor_id",  null: false
     t.datetime "time",       null: false
-    t.datetime "comments"
+    t.text     "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

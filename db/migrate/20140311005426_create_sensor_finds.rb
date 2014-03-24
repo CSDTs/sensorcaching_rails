@@ -4,7 +4,7 @@ class CreateSensorFinds < ActiveRecord::Migration
       t.integer :user_id
       t.integer :sensor_id
       t.datetime :time
-      t.timestamp :comments
+      t.text :comments
 
       t.timestamps
     end
