@@ -1,0 +1,25 @@
+<h1>Listing sensor_finds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensor_finds.each do |sensor_find| %>
+      <tr>
+        <td><%= link_to 'Show', sensor_find %></td>
+        <td><%= link_to 'Edit', edit_sensor_find_path(sensor_find) %></td>
+        <td><%= link_to 'Destroy', sensor_find, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sensor find', new_sensor_find_path %>
