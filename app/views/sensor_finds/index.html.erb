@@ -8,16 +8,11 @@
       <th></th>
     </tr>
   </thead>
-
+  
   <tbody>
-    <% @sensor_finds.each do |sensor_find| %>
-      <tr>
-        <td><%= link_to 'Show', sensor_find %></td>
-        <td><%= link_to 'Edit', edit_sensor_find_path(sensor_find) %></td>
-        <td><%= link_to 'Destroy', sensor_find, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @sensor_finds %>
   </tbody>
+
 </table>
 
 <br>

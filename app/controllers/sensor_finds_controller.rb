@@ -59,6 +59,6 @@ class SensorFindsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sensor_find_params
-      params.require(:sensor_find).permit(:name, :description, :sensor_type_id, :latitude, :longitude)
+      params.require(:sensor_find).permit(:sensor_id, :time, :comments)
     end
 end
