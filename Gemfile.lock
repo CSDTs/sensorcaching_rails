@@ -258,6 +258,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   devise
+  dotenv-deployment
   dotenv-rails
   factory_girl_rails
   figaro
