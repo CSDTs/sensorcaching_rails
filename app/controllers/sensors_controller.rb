@@ -37,6 +37,7 @@ class SensorsController < ApplicationController
   def update
     if obj.update(obj_params)
         format.html { redirect_to obj, notice: obj_name + ' was successfully updated.' }
+    end
   end
 
   # DELETE /sensors/1
