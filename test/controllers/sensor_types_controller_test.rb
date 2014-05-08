@@ -31,10 +31,16 @@ class SensorTypesControllerTest < ActionController::TestCase
 
   test "should create sensor_type" do
     assert_difference('SensorType.count') do
-      post :create, sensor_type: { name: @sensor_type.name }
+      post :create, sensor_type: { name: @sensor_type.name + "_new"}
     end
 
     assert_redirected_to sensor_type_path(assigns(:sensor_type))
+  end
+  
+  test "should not create duplicate sensor_type" do
+    assert_no_difference('SensorType.count') do
+      post :create, sensor_type: { name: @sensor_type.name }
+    end
   end
 
   test "should show sensor_type" do
