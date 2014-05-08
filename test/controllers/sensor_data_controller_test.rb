@@ -5,18 +5,18 @@ class SensorDataControllerTest < ActionController::TestCase
     @sensor_datum = sensor_data(:data_one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:sensor_data)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create sensor_datum" do
+  test 'should create sensor_datum' do
     assert_difference('SensorDatum.count') do
       post :create, sensor_datum: { data: @sensor_datum.data, sensor_find_id: @sensor_datum.sensor_find_id, timestamp: @sensor_datum.timestamp }
     end
@@ -24,22 +24,22 @@ class SensorDataControllerTest < ActionController::TestCase
     assert_redirected_to sensor_datum_path(assigns(:sensor_datum))
   end
 
-  test "should show sensor_datum" do
+  test 'should show sensor_datum' do
     get :show, id: @sensor_datum
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @sensor_datum
     assert_response :success
   end
 
-  test "should update sensor_datum" do
+  test 'should update sensor_datum' do
     patch :update, id: @sensor_datum, sensor_datum: { data: @sensor_datum.data, sensor_find_id: @sensor_datum.sensor_find_id, timestamp: @sensor_datum.timestamp }
     assert_redirected_to sensor_datum_path(assigns(:sensor_datum))
   end
 
-  test "should destroy sensor_datum" do
+  test 'should destroy sensor_datum' do
     assert_difference('SensorDatum.count', -1) do
       delete :destroy, id: @sensor_datum
     end
