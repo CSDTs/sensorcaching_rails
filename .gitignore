@@ -84,3 +84,5 @@ pickle-email-*.html
 # Ignore things with tildes
 *~
 
+# Ignore local .env files, so app secrets will remain, well, secret.
+.env.local
