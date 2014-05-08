@@ -30,5 +30,5 @@ module Combinedcrud extend ActiveSupport::Concern
       end
     end
   end
-  
 end
+

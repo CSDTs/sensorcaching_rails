@@ -4,5 +4,5 @@ class VisitorsController < ApplicationController
   def new
     @sensors = Sensor.all
   end
-
 end
+

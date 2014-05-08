@@ -21,6 +21,6 @@ class Ability
       can :dashboard              # grant access to the dashboard
       can :manage, :all
     end
-    
   end
 end
+
