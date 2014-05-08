@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316011358) do
+ActiveRecord::Schema.define(version: 20140508140526) do
 
   create_table "sensor_data", force: true do |t|
     t.integer  "sensor_find_id"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140316011358) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "sensor_data", ["sensor_find_id"], name: "index_sensor_data_on_sensor_find_id"
 
   create_table "sensor_finds", force: true do |t|
     t.integer  "user_id",    null: false
@@ -30,11 +32,16 @@ ActiveRecord::Schema.define(version: 20140316011358) do
     t.datetime "updated_at"
   end
 
+  add_index "sensor_finds", ["sensor_id"], name: "index_sensor_finds_on_sensor_id"
+  add_index "sensor_finds", ["user_id"], name: "index_sensor_finds_on_user_id"
+
   create_table "sensor_types", force: true do |t|
     t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "sensor_types", ["name"], name: "index_sensor_types_on_name", unique: true
 
   create_table "sensors", force: true do |t|
     t.string   "name",           null: false
@@ -47,6 +54,11 @@ ActiveRecord::Schema.define(version: 20140316011358) do
     t.datetime "updated_at"
     t.string   "address"
   end
+
+  add_index "sensors", ["latitude"], name: "index_sensors_on_latitude"
+  add_index "sensors", ["longitude"], name: "index_sensors_on_longitude"
+  add_index "sensors", ["sensor_type_id"], name: "index_sensors_on_sensor_type_id"
+  add_index "sensors", ["user_id"], name: "index_sensors_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -70,6 +82,8 @@ ActiveRecord::Schema.define(version: 20140316011358) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["latitude"], name: "index_users_on_latitude"
+  add_index "users", ["longitude"], name: "index_users_on_longitude"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "views", force: true do |t|
