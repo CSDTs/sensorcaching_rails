@@ -8,7 +8,7 @@ module SensorsHelper
                           <p>" + sensor.description + "</p>
                           <p><strong>Type:</strong>" + sensor.sensor_type.name + "</p>
                           <p><strong>Nearest Address:</strong>" + sensor.address + "</p>
-                          <p><a href='/sensors/"+ sensor.id.to_s + "/'>More info</a></p>
+                          <p><a href='/sensors/" + sensor.id.to_s + "/'>More info</a></p>
                           
                         </div>"
     end
