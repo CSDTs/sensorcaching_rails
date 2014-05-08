@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.1'
 gem 'rails', '4.0.2'
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -22,6 +23,9 @@ gem 'role_model'
 gem 'coveralls', require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem "rails_admin"
+gem 'factory_girl_rails'
+gem 'oj'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -37,4 +41,5 @@ group :development do
 end
 group :test do
   gem 'rake'
+  gem 'shoulda'
 end

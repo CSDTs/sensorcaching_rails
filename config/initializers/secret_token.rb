@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SensorcachingRails::Application.config.secret_key_base = '86c50c77cc24481a47d9453faeaeb2a204ff9076248d81733ba4fe6a4b0f16329b4fc0048eb330d7f0f50d6061ee227ee9a7fd56cad7e4b52cd7851e127f7fff'
+SensorcachingRails::Application.config.secret_key_base = ENV['SECRET_TOKEN']
