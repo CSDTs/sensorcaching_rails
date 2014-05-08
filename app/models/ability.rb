@@ -11,7 +11,7 @@ class Ability
     can :index, Sensor
     can :create, SensorDatum
     can :create, User
-    can :crud, [Sensor, SensorDatum, SensorFind], :user_id => user.id
+    can :crud, [Sensor, SensorDatum, SensorFind], user_id: user.id
     can :sensors_by_type, Sensor
     can :sensors_near_me, Sensor
     can :sensors_by_user, Sensor
